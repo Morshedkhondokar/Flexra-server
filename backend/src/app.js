@@ -1,7 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+// import routes
 import authRouter from "./routes/auth.routes.js";
+import productRouter from "./routes/product.routes.js";
+
 dotenv.config();
 
 const app = express();
@@ -12,6 +15,9 @@ app.use(cookieParser());
 
 // auth routes
 app.use("/api/auth", authRouter);
+
+// product routes
+app.use("/api/products", productRouter);
 
 
 app.get("/", (req, res) => {
