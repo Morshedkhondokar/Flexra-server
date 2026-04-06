@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 // import routes
 import authRouter from "./routes/auth.routes.js";
 import productRouter from "./routes/product.routes.js";
+import aiRouter from "./routes/aiRoutes.js";
 
 dotenv.config();
 
@@ -18,6 +19,9 @@ app.use("/api/auth", authRouter);
 
 // product routes
 app.use("/api/products", productRouter);
+
+// ai routes
+app.use("/api/ai", aiRouter);
 
 
 app.get("/", (req, res) => {
